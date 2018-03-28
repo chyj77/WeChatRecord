@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item_main_edit"
+        android:icon="@mipmap/menu_edit"
+        android:title="编辑工号"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_item_main_start"
+        android:icon="@mipmap/menu_start"
+        android:title="开始轮询"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_item_main_stop"
+        android:icon="@mipmap/menu_stop"
+        android:title="停止轮询"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_item_main_query"
+        android:icon="@mipmap/menu_search"
+        android:title="搜索"
+        app:showAsAction="always" />
+</menu>

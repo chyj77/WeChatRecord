@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.wanzi.wechatrecord"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    kapt "com.android.databinding:compiler:3.1.0"
+    // 协程
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16'
+    // MaterialDialogs
+    compile 'com.afollestad.material-dialogs:core:0.9.5.0'
+    // Jsoup HTML解析器
+    compile 'org.jsoup:jsoup:1.11.2'
+    compile 'com.android.support:design:27.0.0'
+    // litepal
+    compile 'org.litepal.android:core:1.6.0'
+    // Retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    // Retrofit2 gson
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // FTP
+    compile 'commons-net:commons-net:3.5'
+    // sqlcipher
+    compile 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
+    // RxPermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    // RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.10'
+    // RxAndroid
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    // LeakCanary 内存泄露检测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+}

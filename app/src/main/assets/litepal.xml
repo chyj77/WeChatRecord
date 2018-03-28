@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="WeChatRecord" />
+
+    <version value="2" />
+
+    <list>
+        <mapping class="com.wanzi.wechatrecord.entry.Contact" />
+        <mapping class="com.wanzi.wechatrecord.entry.Message" />
+        <mapping class="com.wanzi.wechatrecord.entry.WeChatFile" />
+
+        <mapping class="com.wanzi.wechatrecord.entry.ChatRoom" />
+    </list>
+</litepal>
